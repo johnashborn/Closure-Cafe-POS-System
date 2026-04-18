@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="580.0" prefWidth="870.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.closurecafepos.Admin_loginController">
+   <children>
+      <ImageView fitHeight="590.0" fitWidth="899.0" opacity="0.45" pickOnBounds="true" preserveRatio="true" style="-fx-effect: innershadow(gaussian, black, 50, 0.5, 0, 0);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../images/Log-in.jpg" />
+         </image>
+         <effect>
+            <GaussianBlur radius="6.47" />
+         </effect>
+      </ImageView>
+      <VBox fx:id="loginCard" alignment="TOP_CENTER" layoutX="494.0" layoutY="11.0" opacity="0.0" prefHeight="568.0" prefWidth="382.0" spacing="1.0" style="-fx-background-color: white; -fx-background-radius: 20;" translateY="50.0">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #6F4E37; -fx-background-radius: 27;">
+                     <children>
+                        <Label text="CC" textFill="WHITE">
+                           <font>
+                              <Font name="Georgia Bold" size="27.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Text fill="#6f4e37" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Login">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text fill="#000000b0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Admin">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <HBox prefHeight="22.0" prefWidth="78.0" style="-fx-background-color: white;">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <children>
+                  <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" x="-50.0">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <TextField id="employee_username" fx:id="admin_username" prefHeight="37.0" prefWidth="336.0" promptText="Enter your username" style="-fx-border-radius: 10; -fx-background-radius: 10;">
+               <VBox.margin>
+                  <Insets top="1.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <HBox style="-fx-background-color: white;">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PIN:">
+                     <font>
+                        <Font name="Arial" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <PasswordField id="employee_pin" fx:id="admin_pin" prefHeight="37.0" prefWidth="336.0" promptText="********" style="-fx-background-radius: 10;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </PasswordField>
+            <HBox alignment="TOP_RIGHT">
+               <children>
+                  <Button fx:id="admin_start" mnemonicParsing="false" onMouseClicked="#handleLogin" prefHeight="50.0" prefWidth="390.0" style="-fx-background-color: #6F4E37; -fx-background-radius: 10;" text="Login" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="70.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Text fill="#6f4e37" strokeType="OUTSIDE" strokeWidth="0.0" underline="true">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text fx:id="login_as_employee" fill="#6f4e37" onMouseClicked="#switchToEmployee" strokeType="OUTSIDE" strokeWidth="0.0" text="Login as an employee instead" underline="true">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      <Pane layoutX="28.0" layoutY="219.0" prefHeight="191.0" prefWidth="446.0" style="-fx-background-color: transparent; -fx-border-color: gray;">
+         <children>
+            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="11.0" layoutY="65.0" stroke="#d7bbbb" strokeType="OUTSIDE" strokeWidth="0.0" text="A leader is one who knows the way, goes the way, and shows the way.&#10;" wrappingWidth="424.0000019073487">
+               <font>
+                  <Font name="Georgia Bold Italic" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#ffe4a8" layoutX="14.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="— John C. Maxwell">
+               <font>
+                  <Font name="Georgia Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#ffe4a8" layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;">
+               <font>
+                  <Font name="Georgia Bold" size="38.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="26.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Closure Cafe">
+         <font>
+            <Font name="Georgia Bold" size="49.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="26.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;Where endings taste a little sweeter&quot;">
+         <font>
+            <Font name="Georgia Bold Italic" size="14.0" />
+         </font>
+      </Text>
+      <Pane layoutX="26.0" layoutY="158.0" prefHeight="4.0" prefWidth="74.0" style="-fx-background-color: #C9A96E; -fx-background-radius: 5;" />
+   </children>
+</AnchorPane>
