@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="14.0" prefHeight="772.0" prefWidth="874.0"
+      style="-fx-background-color: #F5EFE8;"
+      xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.closurecafepos.SalesReportController">
+    <padding><Insets bottom="16.0" left="16.0" right="16.0" top="16.0" /></padding>
+
+    <!-- Page Title -->
+    <Label text="Sales Report" textFill="#4a2e1a">
+        <font><Font name="Georgia Bold" size="22.0" /></font>
+        <VBox.margin><Insets bottom="4.0" /></VBox.margin>
+    </Label>
+
+    <!-- Summary Metric Cards -->
+    <HBox spacing="10.0">
+        <VBox prefHeight="80.0" prefWidth="200.0"
+              style="-fx-background-color: white; -fx-border-color: #D9C8B4;
+                     -fx-border-radius: 12; -fx-background-radius: 12;">
+            <padding><Insets bottom="12.0" left="14.0" right="14.0" top="12.0" /></padding>
+            <Label text="MONTHLY REVENUE" textFill="#a6793b">
+                <font><Font name="Arial Bold" size="9.0" /></font>
+            </Label>
+            <Label fx:id="totalRevenueLabel" text="₱0.00" textFill="#4a2e1a">
+                <font><Font name="Georgia Bold" size="20.0" /></font>
+            </Label>
+        </VBox>
+        <VBox prefHeight="80.0" prefWidth="200.0"
+              style="-fx-background-color: white; -fx-border-color: #D9C8B4;
+                     -fx-border-radius: 12; -fx-background-radius: 12;">
+            <padding><Insets bottom="12.0" left="14.0" right="14.0" top="12.0" /></padding>
+            <Label text="TOTAL ORDERS" textFill="#a6793b">
+                <font><Font name="Arial Bold" size="9.0" /></font>
+            </Label>
+            <Label fx:id="totalOrdersLabel" text="0" textFill="#4a2e1a">
+                <font><Font name="Georgia Bold" size="20.0" /></font>
+            </Label>
+        </VBox>
+        <VBox prefHeight="80.0" prefWidth="200.0"
+              style="-fx-background-color: white; -fx-border-color: #D9C8B4;
+                     -fx-border-radius: 12; -fx-background-radius: 12;">
+            <padding><Insets bottom="12.0" left="14.0" right="14.0" top="12.0" /></padding>
+            <Label text="AVG ORDER VALUE" textFill="#a6793b">
+                <font><Font name="Arial Bold" size="9.0" /></font>
+            </Label>
+            <Label fx:id="avgOrderLabel" text="₱0.00" textFill="#4a2e1a">
+                <font><Font name="Georgia Bold" size="20.0" /></font>
+            </Label>
+        </VBox>
+        <VBox prefHeight="80.0" prefWidth="200.0"
+              style="-fx-background-color: white; -fx-border-color: #D9C8B4;
+                     -fx-border-radius: 12; -fx-background-radius: 12;">
+            <padding><Insets bottom="12.0" left="14.0" right="14.0" top="12.0" /></padding>
+            <Label text="TOP EMPLOYEE" textFill="#a6793b">
+                <font><Font name="Arial Bold" size="9.0" /></font>
+            </Label>
+            <Label fx:id="topEmployeeLabel" text="—" textFill="#4a2e1a">
+                <font><Font name="Georgia Bold" size="16.0" /></font>
+            </Label>
+        </VBox>
+    </HBox>
+
+    <!-- Weekly Sales Chart -->
+    <VBox style="-fx-background-color: white; -fx-border-color: #D9C8B4;
+                 -fx-border-radius: 12; -fx-background-radius: 12;">
+        <Label text="Weekly Sales (from view: daily_sales_summary)" textFill="#4a2e1a">
+            <font><Font name="Georgia Bold" size="13.0" /></font>
+            <VBox.margin><Insets bottom="4.0" left="16.0" top="12.0" /></VBox.margin>
+        </Label>
+        <BarChart fx:id="weeklySalesChart" prefHeight="180.0" prefWidth="840.0"
+                  stylesheets="@../styles/adminDashboard.css"
+                  style="-fx-background-color: transparent;">
+            <xAxis><CategoryAxis side="BOTTOM" /></xAxis>
+            <yAxis><NumberAxis side="LEFT" /></yAxis>
+        </BarChart>
+    </VBox>
+
+    <!-- Bottom Row: Top Products + Profit Trend -->
+    <HBox spacing="14.0">
+
+        <!-- Top Products Table -->
+        <VBox prefWidth="420.0"
+              style="-fx-background-color: white; -fx-border-color: #D9C8B4;
+                     -fx-border-radius: 12; -fx-background-radius: 12;">
+            <Label text="Top Products (HAVING TotalSold &gt; 0)" textFill="#4a2e1a">
+                <font><Font name="Georgia Bold" size="13.0" /></font>
+                <VBox.margin><Insets bottom="4.0" left="16.0" top="12.0" /></VBox.margin>
+            </Label>
+            <TableView fx:id="topProductsTable" prefHeight="180.0" prefWidth="420.0"
+                       style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                <columns>
+                    <TableColumn fx:id="topProdNameCol"  text="Product"    prefWidth="140.0" />
+                    <TableColumn fx:id="topProdCatCol"   text="Category"   prefWidth="80.0" />
+                    <TableColumn fx:id="topProdSalesCol" text="Sold"       prefWidth="50.0" />
+                    <TableColumn fx:id="topProdRevCol"   text="Revenue"    prefWidth="100.0" />
+                </columns>
+            </TableView>
+        </VBox>
+
+        <!-- Profit Trend Chart -->
+        <VBox prefWidth="420.0"
+              style="-fx-background-color: white; -fx-border-color: #D9C8B4;
+                     -fx-border-radius: 12; -fx-background-radius: 12;">
+            <Label text="Profit Trend by Week (GROUP BY WEEK)" textFill="#4a2e1a">
+                <font><Font name="Georgia Bold" size="13.0" /></font>
+                <VBox.margin><Insets bottom="4.0" left="16.0" top="12.0" /></VBox.margin>
+            </Label>
+            <LineChart fx:id="profitTrendChart" prefHeight="180.0" prefWidth="420.0"
+                       stylesheets="@../styles/adminDashboard.css"
+                       style="-fx-background-color: transparent;">
+                <xAxis><CategoryAxis side="BOTTOM" /></xAxis>
+                <yAxis><NumberAxis side="LEFT" /></yAxis>
+            </LineChart>
+        </VBox>
+    </HBox>
+</VBox>

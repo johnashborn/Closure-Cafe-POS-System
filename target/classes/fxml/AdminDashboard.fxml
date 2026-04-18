@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="846.0" prefWidth="1134.0" style="-fx-border-radius: 20;" stylesheets="@../styles/adminDashboard.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.closurecafepos.AdminDashboardController">
+   <children>
+      <VBox layoutX="-3.0" layoutY="-5.0" prefHeight="855.0" prefWidth="285.0" style="-fx-background-color: #4A2E1A;">
+         <children>
+            <HBox prefHeight="80.0" prefWidth="286.0" style="-fx-border-color: gray;">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="53.0" prefWidth="53.0" style="-fx-background-color: #6F4E37; -fx-background-radius: 50;">
+                     <children>
+                        <Label text="CC" textFill="WHITE">
+                           <font>
+                              <Font name="Georgia Bold" size="27.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="73.0" prefWidth="208.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Closure Cafe" wrappingWidth="183.45869398117065">
+                           <font>
+                              <Font name="Georgia Bold" size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fill="#a6793b" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;Where endings taste a little sweeter&quot;" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Text fill="#a0866a" strokeType="OUTSIDE" strokeWidth="0.0" text="MAIN">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" top="50.0" />
+               </VBox.margin>
+            </Text>
+            <Button fx:id="btnDashboard" alignment="BASELINE_LEFT" mnemonicParsing="false" onMouseClicked="#handleShowDashboard" prefHeight="42.0" prefWidth="242.0" style="-fx-background-color: #6F4E37; -fx-background-radius: 20;" text="• Dashboard" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSalesReport" alignment="BASELINE_LEFT" layoutX="30.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#handleShowSalesReport" prefHeight="42.0" prefWidth="242.0" style="-fx-background-color: #6F4E37; -fx-background-radius: 20;" text="• Sales Report" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Text fill="#a0866a" layoutX="30.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MANAGEMENT">
+               <VBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Button fx:id="btnEmployees" alignment="BASELINE_LEFT" layoutX="30.0" layoutY="219.0" mnemonicParsing="false" onMouseClicked="#handleShowEmployees" prefHeight="42.0" prefWidth="242.0" style="-fx-background-color: #6F4E37; -fx-background-radius: 20;" text="• Employees" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnProducts" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="261.0" mnemonicParsing="false" onMouseClicked="#handleShowProducts" prefHeight="42.0" prefWidth="242.0" style="-fx-background-color: #6F4E37; -fx-background-radius: 20;" text="• Products" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Pane prefHeight="112.0" prefWidth="286.0" style="-fx-border-color: gray;">
+               <VBox.margin>
+                  <Insets top="350.0" />
+               </VBox.margin>
+               <children>
+                  <Pane layoutX="19.0" layoutY="16.0" prefHeight="75.0" prefWidth="249.0" style="-fx-background-color: #583B25; -fx-background-radius: 60;">
+                     <children>
+                        <VBox alignment="CENTER" layoutX="17.0" layoutY="10.0" prefHeight="50.0" prefWidth="61.0" style="-fx-background-color: #6F4E37; -fx-background-radius: 50;">
+                           <children>
+                              <Label text="AD" textFill="WHITE">
+                                 <font>
+                                    <Font name="Georgia Bold" size="23.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="79.0" layoutY="8.0" prefHeight="56.0" prefWidth="156.0">
+                           <children>
+                              <Text fx:id="adminName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Name">
+                                 <font>
+                                    <Font name="Arial Bold" size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="2.0" top="10.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Text fill="#a6793b" strokeType="OUTSIDE" strokeWidth="0.0" text="Administrator">
+                                 <VBox.margin>
+                                    <Insets left="3.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Arial Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <Pane layoutX="281.0" layoutY="-4.0" prefHeight="78.0" prefWidth="876.0" style="-fx-border-color: gray;">
+         <children>
+            <Label layoutX="29.0" layoutY="31.0" text="Dashboard">
+               <font>
+                  <Font name="Georgia Bold" size="27.0" />
+               </font>
+            </Label>
+            <Button fx:id="logoutButton" layoutX="504.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#adminLogout" prefHeight="42.0" prefWidth="101.0" style="-fx-background-color: #F5EFE8; -fx-border-color: #97343C; -fx-background-radius: 30; -fx-border-radius: 30;" text="Log out" textFill="#6b4c33">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="addEmployee" layoutX="617.0" layoutY="22.0" mnemonicParsing="false" onMouseClicked="#handleShowEmployees" prefHeight="42.0" prefWidth="115.0" style="-fx-background-color: #F5EFE8; -fx-border-color: #997359; -fx-background-radius: 30; -fx-border-radius: 30;" text="Add Employee" textFill="#6b4c33">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="addProducts" layoutX="743.0" layoutY="23.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="127.0" style="-fx-background-color: #F5EFE8; -fx-border-color: #997359; -fx-background-radius: 30; -fx-border-radius: 30;" text="Add Products" textFill="#6b4c33">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="282.0" layoutY="75.0">
+         <children>
+            <Pane fx:id="contentArea" prefHeight="772.0" prefWidth="874.0" style="-fx-background-color: #F5EFE8; -fx-border-color: #D9C8B4;">
+               <children>
+                  <HBox layoutX="6.0" layoutY="35.0" prefHeight="99.0" prefWidth="868.0">
+                     <children>
+                        <VBox prefHeight="99.0" prefWidth="198.0" style="-fx-border-color: #D9C8B4; -fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                           <children>
+                              <Text fill="#6b4d26" strokeType="OUTSIDE" strokeWidth="0.0" text="Today's Current Sales">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Label fx:id="totalSales" text="₱0.00" textFill="#4a2e1a">
+                                 <font>
+                                    <Font name="Arial Bold" size="29.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="40.0" layoutY="10.0" prefHeight="125.0" prefWidth="198.0" style="-fx-border-color: #D9C8B4; -fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                           <children>
+                              <Text fill="#6b4d26" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Revenue">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Label fx:id="revenue" text="₱0.00" textFill="#4a2e1a">
+                                 <font>
+                                    <Font name="Arial Bold" size="29.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox layoutX="255.0" layoutY="10.0" prefHeight="125.0" prefWidth="198.0" style="-fx-border-color: #D9C8B4; -fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                           <children>
+                              <Text fill="#6b4d26" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Employees">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Label fx:id="employees" text="0" textFill="#4a2e1a">
+                                 <font>
+                                    <Font name="Arial Bold" size="29.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox layoutX="489.0" layoutY="10.0" prefHeight="99.0" prefWidth="198.0" style="-fx-border-color: #D9C8B4; -fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                           <children>
+                              <Text fill="#6b4d26" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu Items">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Label fx:id="items" text="0" textFill="#4a2e1a">
+                                 <font>
+                                    <Font name="Arial Bold" size="29.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+      
+                  <!-- TODAY'S ATTENDANCE — replaced the blank Pane -->
+                  <VBox layoutX="530.0" layoutY="154.0" prefHeight="271.0" prefWidth="322.0" style="-fx-border-color: #D9C8B4; -fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                     <children>
+                        <Label text="Today's Attendance" textFill="#4a2e1a">
+                           <font>
+                              <Font name="Georgia Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="15.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TableView fx:id="attendanceTable" prefHeight="258.0" prefWidth="321.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                           <columns>
+                              <TableColumn fx:id="attNameCol" prefWidth="123.99999690055847" text="Name" />
+                              <TableColumn fx:id="attRoleCol" prefWidth="60" text="Role" />
+                              <TableColumn fx:id="attTimeInCol" prefWidth="50" text="In" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+      
+                 <VBox layoutX="19.0" layoutY="435.0" prefHeight="171.0" prefWidth="832.0" style="-fx-border-color: #D9C8B4; -fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+          <children>
+              <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="827.0">
+                  <padding>
+                              <Insets bottom="8.0" left="16.0" right="16.0" top="8.0" />
+                           </padding>
+                  <Label text="Employees" textFill="#4a2e1a" HBox.hgrow="ALWAYS">
+                      <font>
+                                 <Font name="Georgia Bold" size="15.0" />
+                              </font>
+                  </Label>
+                  <Button fx:id="addEmployeeBtn" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #F5EFE8; -fx-background-radius: 20; -fx-border-color: #997359; -fx-border-radius: 20;" text="+ Add Employee" textFill="#6b4c33">
+                      <font>
+                                 <Font name="System Bold" size="11.0" />
+                              </font>
+                              <HBox.margin>
+                                 <Insets left="590.0" />
+                              </HBox.margin>
+                  </Button>
+              </HBox>
+              <TableView fx:id="employeesTable" prefHeight="111.0" prefWidth="830.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                  <columns>
+                      <TableColumn fx:id="empUsernameCol" prefWidth="320.0" text="Username" />
+                      <TableColumn fx:id="empRoleCol" prefWidth="100.0" text="Role" />
+                      <TableColumn fx:id="empStatusCol" prefWidth="80.0" text="Status" />
+                      <TableColumn fx:id="empTimeInCol" prefWidth="100.0" text="Time In" />
+                      <TableColumn fx:id="empTimeOutCol" prefWidth="100.0" text="Time Out" />
+                      <TableColumn fx:id="empActionsCol" prefWidth="100.0" text="Actions" />
+                  </columns>
+              </TableView>
+          </children>
+      </VBox>
+                  <VBox layoutX="19.0" layoutY="610.0" prefHeight="154.0" prefWidth="832.0" style="-fx-border-color: #D9C8B4; -fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+          <children>
+              <HBox alignment="CENTER_LEFT" prefHeight="40.0" style="-fx-border-color: transparent transparent #EDE0D0 transparent; -fx-border-width: 0 0 1 0;">
+                  <padding>
+                              <Insets bottom="8.0" left="16.0" right="16.0" top="8.0" />
+                           </padding>
+                  <Label text="Products" textFill="#4a2e1a" HBox.hgrow="ALWAYS">
+                      <font>
+                                 <Font name="Georgia Bold" size="15.0" />
+                              </font>
+                  </Label>
+                  <HBox alignment="CENTER_RIGHT" spacing="6.0" HBox.hgrow="ALWAYS">
+                      <Button fx:id="filterAllBtn" onAction="#filterAll" prefHeight="26.0" prefWidth="40.0" style="-fx-background-color: #6F4E37; -fx-background-radius: 20; -fx-border-radius: 20; -fx-text-fill: white;" text="All">
+                          <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                      </Button>
+                      <Button fx:id="filterCoffeeBtn" onAction="#filterCoffee" prefHeight="26.0" prefWidth="60.0" style="-fx-background-color: #F5EFE8; -fx-border-color: #997359; -fx-background-radius: 20; -fx-border-radius: 20; -fx-text-fill: #6f4e37;" text="Coffee">
+                          <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                      </Button>
+                      <Button fx:id="filterFrappesBtn" onAction="#filterFrappes" prefHeight="26.0" prefWidth="65.0" style="-fx-background-color: #F5EFE8; -fx-border-color: #997359; -fx-background-radius: 20; -fx-border-radius: 20; -fx-text-fill: #6f4e37;" text="Frappes">
+                          <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                      </Button>
+                      <Button fx:id="filterDessertsBtn" onAction="#filterDesserts" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #F5EFE8; -fx-border-color: #997359; -fx-background-radius: 20; -fx-border-radius: 20; -fx-text-fill: #6f4e37;" text="Desserts">
+                          <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                      </Button>
+                      <Button fx:id="filterPastriesBtn" onAction="#filterPastries" prefHeight="26.0" prefWidth="65.0" style="-fx-background-color: #F5EFE8; -fx-border-color: #997359; -fx-background-radius: 20; -fx-border-radius: 20; -fx-text-fill: #6f4e37;" text="Pastries">
+                          <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                      </Button>
+                      <Button mnemonicParsing="false" onAction="#handleAddProduct" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #7A4A2A; -fx-background-radius: 20; -fx-border-radius: 20; -fx-text-fill: white;" text="+ Add Product">
+                          <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                      </Button>
+                  </HBox>
+              </HBox>
+              <TableView fx:id="productsTable" prefHeight="108.0" prefWidth="832.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                  <columns>
+                      <TableColumn fx:id="prodNameCol" prefWidth="400.0" text="Name" />
+                      <TableColumn fx:id="prodCategoryCol" prefWidth="100.0" text="Category" />
+                      <TableColumn fx:id="prodPriceCol" prefWidth="90.0" text="Price" />
+                      <TableColumn fx:id="prodStatusCol" prefWidth="110.0" text="Status" />
+                      <TableColumn fx:id="prodActionsCol" prefWidth="100.0" text="Actions" />
+                  </columns>
+              </TableView>
+          </children>
+      </VBox>
+                  <BarChart fx:id="salesChart" layoutX="20.0" layoutY="158.0" legendSide="TOP" prefHeight="271.0" prefWidth="502.0" style="-fx-border-color: #D9C8B4; -fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@../styles/adminDashboard.css" title="Weekly Sales Overview">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
